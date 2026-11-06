@@ -1,45 +1,57 @@
-name: Materialize preserved source (no APK build)
+name: Publish original source only (no APK build)
 on:
   push:
     paths:
-      - '.source-transfer/READY'
+      - '.github/workflows/materialize-source.yml'
 permissions:
   contents: write
 jobs:
-  materialize:
-    if: github.event.deleted == false
+  publish-source:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      TRANSFER_URL: https://gain-mud-seat-inkjet.trycloudflare.com
+      SOURCE_SHA256: cd8ba137e4e491fd21593846be2dce9e5c673b537b059acc39288e340ab9d088
     steps:
       - uses: actions/checkout@v4
-      - name: Restore exact source files only
+      - name: Transfer and commit exact source without compiling
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import base64, hashlib, io, json, tarfile
-          root = Path.cwd().resolve()
-          transfer = root / '.source-transfer'
-          meta = json.loads((transfer / 'READY').read_text())
-          parts = sorted(transfer.glob('part-*.txt'))
-          assert len(parts) == meta['parts'], 'Missing transfer parts'
-          data = base64.b64decode(''.join(p.read_text() for p in parts), validate=True)
-          assert hashlib.sha256(data).hexdigest() == meta['sha256'], 'Archive checksum differs'
-          with tarfile.open(fileobj=io.BytesIO(data), mode='r:xz') as archive:
-              for entry in archive.getmembers():
-                  target = (root / entry.name).resolve()
-                  assert target.is_relative_to(root), 'Unsafe archive path'
-                  assert not entry.issym() and not entry.islnk(), 'No archive links allowed'
-                  assert entry.isfile() or entry.isdir(), 'Unsupported archive entry'
-              archive.extractall(root, filter='data')
+          import base64, hashlib, io, json, os, subprocess, tarfile, tempfile, urllib.request
+          root=Path.cwd().resolve()
+          base=os.environ['TRANSFER_URL']
+          def post(path, data, content_type='application/json'):
+              request=urllib.request.Request(base+path, data=data, headers={'Content-Type':content_type}, method='POST')
+              return urllib.request.urlopen(request, timeout=60).read()
+          try:
+              with tempfile.TemporaryDirectory() as temp:
+                  key=Path(temp)/'transport-private.pem'
+                  subprocess.run(['openssl','genpkey','-algorithm','RSA','-pkeyopt','rsa_keygen_bits:3072','-out',str(key)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+                  public=subprocess.check_output(['openssl','pkey','-in',str(key),'-pubout'])
+                  post('/enroll',public,'application/x-pem-file')
+                  envelope=json.loads(urllib.request.urlopen(base+'/archive',timeout=60).read())
+                  secret=subprocess.check_output(['openssl','pkeyutl','-decrypt','-inkey',str(key),'-pkeyopt','rsa_padding_mode:oaep','-pkeyopt','rsa_oaep_md:sha256','-pkeyopt','rsa_mgf1_md:sha256'],input=base64.b64decode(envelope['wrapped_key']))
+                  raw=subprocess.check_output(['openssl','enc','-d','-aes-256-cbc','-K',secret.hex(),'-iv',base64.b64decode(envelope['iv']).hex()],input=base64.b64decode(envelope['ciphertext']))
+                  assert hashlib.sha256(raw).hexdigest()==os.environ['SOURCE_SHA256'], 'Archive integrity check failed'
+                  with tarfile.open(fileobj=io.BytesIO(raw),mode='r:xz') as archive:
+                      entries=archive.getmembers()
+                      for entry in entries:
+                          assert (root/entry.name).resolve().is_relative_to(root), 'Unsafe path'
+                          assert entry.isfile() or entry.isdir(), 'Unsupported archive member'
+                      archive.extractall(root,filter='data')
+              subprocess.run(['python3','scripts/verify-source.py'],check=True)
+              subprocess.run(['bash','-n','scripts/build-local.sh','output/jarvis-android/build-apk.sh'],check=True)
+              subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+              subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+              subprocess.run(['git','add','README.md','.gitignore','config','docs','output','scripts','server'],check=True)
+              subprocess.run(['git','commit','-m','[skip ci] source: preserve complete Jarvis RC16 without app changes'],check=True)
+              subprocess.run(['git','push','origin','HEAD:main'],check=True)
+              sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+              post('/status',json.dumps({'success':True,'commit':sha,'source_files':len(entries),'apk_built':False}).encode())
+          except Exception as error:
+              try: post('/status',json.dumps({'success':False,'error_type':type(error).__name__,'apk_built':False}).encode())
+              except Exception: pass
+              raise
           PY
-          python3 scripts/verify-source.py
-          bash -n scripts/build-local.sh output/jarvis-android/build-apk.sh
-      - name: Commit the complete original source (no compilation)
-        shell: bash
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm -r .source-transfer
-          git add README.md .gitignore config docs output scripts server
-          git commit -m '[skip ci] source: materialize preserved Jarvis RC16 snapshot'
-          git push origin HEAD:main
