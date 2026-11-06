@@ -1,0 +1,6 @@
+# LOCAL EXAMPLE ONLY. Copy to .dev.vars (ignored), fill locally.
+# Production: use Cloudflare Worker secrets, not wrangler.jsonc vars.
+GEMINI_API_KEY=""
+JARVIS_TOKEN_SECRET=""
+JARVIS_DEVICE_TOKEN=""
+JARVIS_APPROVED_DEVICE=""

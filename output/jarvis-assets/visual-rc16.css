@@ -1,0 +1,32 @@
+/* J.A.R.V.I.S. RC16 — typography and soft 3D chart presentation only.
+   Palette and data paints remain owned by the existing components. */
+@font-face{font-family:Poppins;src:url("fonts/Poppins-Regular-400.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Poppins;src:url("fonts/Poppins-Medium-500.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:Poppins;src:url("fonts/Poppins-SemiBold-600.ttf") format("truetype");font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:Poppins;src:url("fonts/Poppins-Bold-700.ttf") format("truetype");font-style:normal;font-weight:700;font-display:swap}
+:root{--jarvis-rc16-font:Poppins,Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+html,body,body :not(.textLayer):not(.textLayer *):not(.pdfViewer):not(.pdfViewer *):not(.book-reader-content):not(.book-reader-content *):not(.reader-page-content):not(.reader-page-content *){font-family:var(--jarvis-rc16-font)!important}
+/* Keep original book pages/PDF glyphs intact; only reader chrome inherits the project UI font. */
+.pdfViewer .textLayer,.book-reader-content,.reader-page-content{font-family:inherit!important}
+svg text,.chart-label,.j22-empty-copy{font-family:var(--jarvis-rc16-font)!important}
+
+/* Recessed chart surfaces: only shadow/highlight layers; existing fills stay unchanged. */
+.calorie-chart-wrap,.weight-chart-summary,.j22-chart,.j22-chart-30,.flow-chart{isolation:isolate}
+.calorie-chart-wrap svg,.j22-weight-chart,.flow-chart svg{overflow:visible}
+.chart-day-bar,.j22-bar,.flow-chart .bar-income,.flow-chart .bar-expense{stroke:rgba(255,255,255,.24);stroke-width:.7;paint-order:stroke fill;filter:url(#jarvisRc16SoftShadow)!important}
+.chart-day-bar,.j22-bar,.bar-income,.bar-expense{rx:7px;ry:7px}
+.j22-weight-line,.j22-weight-path,.j15-reference-path{filter:url(#jarvisRc16CurveShadow);stroke-linecap:round;stroke-linejoin:round}
+.j22-weight-point{filter:url(#jarvisRc16SoftShadow)}
+.j22-weight-chart .j22-weight-point:first-of-type{filter:url(#jarvisRc16SoftShadow)}
+/* Native donut colors are deliberately untouched; the rim and inner well add depth. */
+.donut{box-shadow:inset 2px 2px 3px rgba(255,255,255,.18),inset -8px -8px 14px rgba(0,0,0,.22),0 7px 14px rgba(0,0,0,.18)}
+.donut:before{content:"";position:absolute;inset:4px;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.19),transparent 33%);mix-blend-mode:screen}
+.donut:after{box-shadow:inset 2px 2px 4px rgba(255,255,255,.09),inset -5px -5px 10px rgba(0,0,0,.18)}
+.jd-ring-svg{filter:drop-shadow(2px 4px 5px rgba(0,0,0,.25))!important}
+.jd-ring-progress{filter:url(#jarvisRc16CurveShadow)}
+.bike-progress,.control-progress>div{box-shadow:inset 1px 2px 3px rgba(0,0,0,.26),inset 0 1px rgba(255,255,255,.1)}
+.bike-progress i,.control-progress i{box-shadow:inset 1px 1px rgba(255,255,255,.28),0 2px 4px rgba(0,0,0,.24)}
+/* Keyboard cues remain crisp over elevated chart elements. */
+.calorie-chart-wrap [role=button]:focus-visible,.flow-chart [role=button]:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:8px}
+@media (max-width:320px){.donut{width:112px;height:112px}.donut:after{inset:12px}.flow-chart{height:132px}.chart-label{font-size:8px}}
+@media (prefers-reduced-motion:reduce){.chart-day-bar,.j22-bar,.j22-weight-line,.jd-ring-progress{transition:none!important;animation:none!important}}

@@ -1,0 +1,191 @@
+/* RC9 — camada visual opcional. Carregue após health-rc8.css. */
+#jarvisSidebar [data-jarvis-route="nutrition"]{display:none!important}
+/* RC10: cartões separados, iguais à referência aprovada. DOM anterior preservado. */
+#jarvisDashboardV22{display:block!important;margin:0 0 16px!important}
+#rc8HealthPanel .rc8-chart-controls,#rc8HealthPanel #rc8CaloriePane,#rc8HealthPanel #rc8WeightPane,#home .streak-card{display:none!important}
+#rc8HealthPanel>h2{font-size:18px}
+#jarvisDashboardV22 .j22-card,#jarvisDashboardV22 .j22-streak{width:100%;min-width:0}
+#jarvisDashboardV22 .j22-summary{flex-wrap:wrap}
+#jarvisDashboardV22 svg{max-width:100%}
+#home>#homeFoodToday{margin:14px 0 12px!important;padding:18px 15px!important;border:1px solid #28435b!important;border-radius:22px!important;background:linear-gradient(150deg,#0e2034,#0b1422)!important;box-shadow:0 8px 26px #0004}
+#homeFoodToday .home-food-eyebrow{color:#70bfff!important;font-size:9px;letter-spacing:1.5px}
+#homeFoodToday h2{font-size:20px!important;margin:5px 0!important;color:#edf7ff!important}
+#homeFoodToday .rc7-food-add{min-height:44px;margin-top:12px!important;border-radius:13px!important;background:#183d60!important;border:1px solid #366993!important;color:#e8f5ff!important;font-weight:600}
+#homeFoodEntries{margin-top:12px}#homeFoodToday .home-food-footnote{font-size:10px!important;line-height:1.5!important}
+#home>#rc8HealthPanel{margin:12px 0 16px!important;background:linear-gradient(150deg,#0e2034,#0a1420)!important;border-color:#28435b!important}
+#rc8HealthPanel .calorie-chart-wrap svg,#rc8HealthPanel #weightProgressChart{min-height:170px}
+#rc8HealthPanel .rc8-point{r:4.5;stroke-width:2}
+#rc8HealthPanel .rc9-area{opacity:1}
+#rc8HealthPanel .calorie-total strong{font-size:30px}
+#rc8HealthPanel [role="tabpanel"][hidden]{display:none!important}
+
+/* Biblioteca: o PNG já tem cores; RC7 o deixava monocromático. */
+#library .lb-hero{min-height:220px}
+#library .lb-hero>img{
+  right:-24px;
+  top:10px;
+  width:204px;
+  height:196px;
+  max-width:58%;
+  object-fit:contain;
+  object-position:center bottom;
+  border-radius:0;
+  opacity:1;
+  mix-blend-mode:normal;
+  filter:none;
+}
+#library .lb-welcome,#library h1,#library .lb-hero>p,#library .lb-hero-bottom{z-index:2}
+#library .lb-hero-bottom{padding-top:14px}
+@media(max-width:340px){
+  #library .lb-hero{min-height:210px}
+  #library .lb-hero>img{right:-29px;top:18px;width:174px;height:174px;max-width:56%}
+}
+
+/* Gringotts: esta folha também é injetada no iframe por layout-rc9-extra.js. */
+.gringotts-editor{margin:14px 0!important;padding:14px!important;border-radius:14px!important}
+.gringotts-editor h2{font-size:17px!important;line-height:1.2!important;margin-bottom:4px!important}
+.gringotts-editor>p{margin:5px 0!important;font-size:11px!important;line-height:1.45!important}
+.gringotts-editor textarea{min-height:76px!important;max-height:132px;margin:9px 0 7px!important;padding:10px!important;font-size:12px!important;line-height:1.45!important}
+.gringotts-editor>button{min-height:39px!important;margin:0!important;padding:9px 11px!important;font-size:11px!important}
+.gringotts-selected-label{margin:8px 0!important;padding:7px 9px!important;font-size:10px!important;line-height:1.4!important}
+.gringotts-form{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin-top:10px!important}
+.gringotts-form label{min-width:0;font-size:10px!important}
+.gringotts-form label:nth-child(2){grid-column:1/-1}
+.gringotts-form span{margin-bottom:4px!important}
+.gringotts-form input,.gringotts-form select{min-height:39px!important;padding:8px!important;font-size:12px!important}
+.gringotts-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;margin-top:9px!important}
+.gringotts-actions button{width:100%;min-width:0!important;min-height:40px!important;padding:8px 5px!important;font-size:10px!important;line-height:1.2!important}
+#gringotts-preview{margin:9px 0!important;padding:9px!important;font-size:10px!important;line-height:1.45!important}
+#gringotts-confirm{margin-top:0!important;width:calc(50% - 4px)!important}
+#gringotts-confirm+button{width:calc(50% - 4px)!important;margin-left:8px!important}
+#gringotts-message{min-height:16px!important;overflow-wrap:anywhere}
+.finance-live-dashboard{margin-top:16px!important}
+@media(max-width:360px){
+  .gringotts-editor{padding:12px!important}
+  .gringotts-actions{grid-template-columns:1fr!important}
+  .gringotts-actions button{font-size:11px!important}
+}
+
+/* RC11 — editor ao fim do Gringotts, campos e ações legíveis no celular. */
+main.wrap>.gringotts-editor{box-sizing:border-box!important;width:100%!important;max-width:100%!important;margin:24px 0 14px!important;padding:16px!important;scroll-margin-top:18px;border-radius:18px!important;overflow-wrap:anywhere}
+.gringotts-editor *{box-sizing:border-box}
+.gringotts-editor h2{font-size:19px!important;margin-bottom:8px!important}
+.gringotts-editor>p{font-size:12px!important;line-height:1.5!important}
+.gringotts-editor textarea{min-height:90px!important;max-height:180px!important;width:100%!important;font-family:inherit!important;font-size:14px!important;padding:12px!important}
+.gringotts-editor>button{width:100%;margin:0!important;min-height:44px!important;font-size:13px!important}
+.gringotts-form{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-areas:"type recurrence" "description description" "amount date"!important;gap:12px!important;margin-top:18px!important}
+.gringotts-form label:nth-child(1){grid-area:type}
+.gringotts-form label:nth-child(2){grid-area:description;grid-column:1/-1!important}
+.gringotts-form label:nth-child(3){grid-area:amount}
+.gringotts-form label:nth-child(4){grid-area:date}
+.gringotts-form label:nth-child(5){grid-area:recurrence}
+.gringotts-form label{font-size:12px!important;min-width:0!important;max-width:100%}
+.gringotts-form span{margin-bottom:6px!important}
+.gringotts-form input,.gringotts-form select{display:block;width:100%!important;min-width:0!important;max-width:100%!important;min-height:46px!important;font:14px system-ui!important;padding:10px 8px!important;color-scheme:dark}
+.gringotts-form input[type=date]{font-size:12px!important}
+.gringotts-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;margin-top:16px!important;padding-top:14px;border-top:1px solid #294760}
+.gringotts-actions>button{width:100%!important;min-width:0!important;min-height:46px!important;padding:10px 6px!important;margin:0!important;font-size:12px!important;line-height:1.35!important;white-space:normal}
+.gringotts-actions>button:first-child{grid-column:1/-1;background:#145780!important;border-color:#3d9bce!important}
+.gringotts-actions>button:last-child{border-color:#82506a!important}
+.gringotts-confirm-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+.gringotts-confirm-actions:has(#gringotts-confirm:disabled){display:none}
+.gringotts-confirm-actions>button,#gringotts-confirm,#gringotts-confirm+button{width:100%!important;min-width:0!important;min-height:46px!important;margin:0!important;padding:10px 5px!important;font-size:12px!important;white-space:normal}
+#gringotts-preview{font-size:12px!important;max-width:100%;overflow-wrap:anywhere}
+#gringotts-message{font-size:12px!important;line-height:1.5!important;margin-top:12px!important}
+
+/* RC12: existing character first; meal card uses the full content width. */
+#home > #homeFoodToday{width:100%!important;max-width:none!important;min-width:0;box-sizing:border-box}
+#home > .stage{width:100%;max-width:100%;margin:0!important}
+
+/* RC13: readable real weight history, independent journey reference. */
+.j22-weight-journey{margin:15px 0 12px;padding:12px;border:1px solid #274963;border-radius:12px;background:#0b2133}
+.j22-journey-labels{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#b5d4e8}
+.j22-journey-meter{height:7px;border-radius:9px;background:#233b50;overflow:hidden;margin:10px 0}
+.j22-journey-meter i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#338bdf,#51ddff)}
+.j22-journey-caption{font-size:10px;line-height:1.6;color:#a3d7eb;margin:0}
+.j22-weight-value{fill:#c9f4ff;font-size:10px;font-weight:700}
+.j22-weight-detail{font-size:11px;line-height:1.6;color:#bce6f8;margin:4px 0}
+.j22-weight-chart [role=button]{cursor:pointer;outline:none}
+.j22-weight-chart [role=button]:focus .j22-weight-point{stroke:#fff;stroke-width:3}
+
+/* RC14: one blue project theme for nutrition tools. Presentation only. */
+#nutrition{color-scheme:dark}
+#nutrition #topMealEntry,#nutrition #foodChat22,#nutrition .jarvis-ai-card{
+ box-sizing:border-box!important;width:calc(100% - 36px)!important;max-width:none!important;margin:14px 18px!important;padding:18px 15px!important;
+ border:1px solid #1d4a70!important;border-radius:20px!important;background:radial-gradient(ellipse at 92% -20%,#176da544 0%,transparent 45%),linear-gradient(150deg,#0d2842,#071421 72%)!important;
+ box-shadow:0 10px 24px #0005!important;color:#ecf8ff!important;overflow-wrap:anywhere;
+}
+#nutrition #topMealEntry *,#nutrition #foodChat22 *,#nutrition .jarvis-ai-card *{box-sizing:border-box}
+#nutrition #topMealEntry h3,#nutrition #foodChat22 h3,#nutrition .jarvis-ai-card h2,#nutrition .jarvis-ai-card h3{color:#f0f9ff!important;font-family:inherit!important;font-size:17px!important;line-height:1.3!important;margin:0 0 10px!important;letter-spacing:-.3px}
+#nutrition #topMealEntry p,#nutrition #foodChat22 p,#nutrition .jarvis-ai-card p{color:#a6bfd4!important;font-family:inherit;line-height:1.65!important;font-size:11px!important}
+#nutrition #topMealEntry label,#nutrition #foodChat22 label,#nutrition .jarvis-ai-card label{color:#c3dfef!important;font-size:11px!important;line-height:1.5;display:block;margin:12px 0 6px}
+#nutrition .jarvis-ai-heading small{color:#7fcdf7!important;font-size:8px!important;letter-spacing:1.35px}
+#nutrition #topMealEntry input:not([type=file]),#nutrition #topMealEntry select,#nutrition #topMealEntry textarea,
+#nutrition #foodChat22 input,#nutrition #foodChat22 select,#nutrition #foodChat22 textarea,#nutrition .jarvis-ai-card textarea{
+ width:100%!important;max-width:100%!important;min-width:0!important;border:1px solid #31546f!important;border-radius:12px!important;
+ background:#081c2e!important;color:#edf8ff!important;padding:11px 12px!important;font-family:inherit!important;font-size:13px!important;line-height:1.6!important;min-height:44px;box-shadow:none!important;
+}
+#nutrition #foodChat22 textarea,#nutrition .jarvis-ai-card textarea,#nutrition #topMealEntry textarea{display:block;min-height:100px!important;resize:vertical}
+#nutrition #topMealEntry input::placeholder,#nutrition #topMealEntry textarea::placeholder,#nutrition #foodChat22 input::placeholder,#nutrition #foodChat22 textarea::placeholder,#nutrition .jarvis-ai-card textarea::placeholder{color:#7e9fb9!important;opacity:1}
+#nutrition #topMealEntry :is(input,select,textarea):focus,#nutrition #foodChat22 :is(input,select,textarea):focus,#nutrition .jarvis-ai-card textarea:focus{outline:2px solid #58cfff!important;outline-offset:2px;border-color:#58cfff!important}
+#nutrition #topMealEntry button,#nutrition #foodChat22 button,#nutrition .jarvis-ai-card button,#nutrition .rc8-go-health{
+ min-width:0;min-height:44px!important;border:1px solid #315b7b!important;border-radius:12px!important;background:#12334f!important;color:#d0efff!important;
+ padding:10px 12px!important;font-family:inherit!important;font-size:11px!important;line-height:1.5!important;box-shadow:none!important;cursor:pointer;
+}
+#nutrition #foodChat22>button,#nutrition .jarvis-ai-card .jarvis-ai-submit,#nutrition #topQuickSave,#nutrition #foodSaveMeal{
+ width:100%!important;margin-top:12px!important;background:linear-gradient(135deg,#147dbc,#0c5a92)!important;border-color:#3398cf!important;color:#f0faff!important;font-weight:700!important;
+}
+#nutrition #topMealEntry button:disabled,#nutrition #foodChat22 button:disabled,#nutrition .jarvis-ai-card button:disabled{opacity:.5!important;cursor:not-allowed!important}
+#nutrition #topMealEntry button[aria-pressed=true]{background:#16699e!important;border-color:#56bff4!important;color:#fff!important}
+#nutrition #topMealEntry .top-quick-search{display:flex;align-items:stretch;gap:8px}
+#nutrition #topMealEntry .top-quick-search input{flex:1;width:0!important}
+#nutrition #topQuickSearchButton{flex:0 0 44px;width:44px;padding:9px!important;color:#83deff!important;display:grid;place-items:center}
+#nutrition #topMealEntry .home-food-tools,#nutrition #topMealEntry .top-quick-voice,#nutrition #topMealEntry .food-barcode-manual{
+ border:1px solid #294b66!important;border-radius:12px!important;background:#0a2033!important;color:#b8d9ee!important;padding:12px!important;margin:12px 0 0!important;
+}
+#nutrition #topMealEntry summary{font-family:inherit!important;font-size:11px!important;line-height:1.6!important;color:#bce6ff!important;cursor:pointer;min-height:22px}
+#nutrition #topMealEntry summary::marker{color:#69cfff}
+#nutrition #foodPhotoBox,#nutrition #homeMealDraft{border:0!important;border-radius:0!important;background:transparent!important;padding:12px 0 0!important;margin:0!important;box-shadow:none!important}
+#nutrition #topMealEntry .food-photo-buttons,#nutrition #topMealEntry .top-meal-buttons{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+#nutrition #topMealEntry .food-photo-buttons button,#nutrition #topMealEntry .top-meal-buttons button{flex:1 1 100px}
+#nutrition #foodChat22 .food-chat22-history{gap:9px;margin:12px 0;max-height:240px}
+#nutrition #foodChat22 .food-chat22-msg{border:1px solid #294a64;border-radius:13px;padding:11px 12px;background:#102b41!important;color:#d6ebfa!important;font-family:inherit;font-family:inherit!important;font-size:11px!important;line-height:1.65!important;white-space:pre-wrap;overflow-wrap:anywhere}
+#nutrition #foodChat22 .food-chat22-msg.user{background:#12446a!important;border-color:#286b9a!important;color:#eff9ff!important}
+#nutrition #foodChat22 .food-chat22-proposal{border-top-color:#294b66!important}
+#nutrition #foodChat22 .food-chat22-item{grid-template-columns:minmax(0,1fr) 75px 64px;gap:7px}
+#nutrition #foodChat22 .food-chat22-nutrients,#nutrition #foodChat22 .food-chat22-source,#nutrition #foodChat22 .food-chat22-status{color:#9cbcd2!important}
+#nutrition #foodChat22 .food-chat22-danger{color:#ffb9b4!important}
+#nutrition .jarvis-ai-card .jarvis-ai-gear{width:44px!important;min-width:44px!important;height:44px;padding:10px!important;display:grid;place-items:center;color:#82dbff!important}
+#nutrition .jarvis-ai-card .jarvis-ai-answer{background:#0b2135!important;border:1px solid #294d6b!important;border-radius:13px!important;padding:13px!important;color:#d9edfc!important}
+#nutrition .jarvis-ai-card .jarvis-ai-output,#nutrition .jarvis-ai-card .jarvis-ai-status{color:#b6d4e8!important;line-height:1.65!important;font-size:11px!important;overflow-wrap:anywhere}
+#nutrition .jarvis-ai-card a{color:#7edbff!important}
+#nutrition .rc8-go-health{width:calc(100% - 36px)!important;margin:0 18px!important;border-radius:12px!important}
+@media(max-width:340px){#nutrition #topMealEntry,#nutrition #foodChat22,#nutrition .jarvis-ai-card{width:calc(100% - 24px)!important;margin:12px!important;padding:15px 12px!important}#nutrition .rc8-go-health{width:calc(100% - 24px)!important;margin:0 12px!important}#nutrition #foodChat22 .food-chat22-item{grid-template-columns:minmax(0,1fr) 65px 58px}}
+
+/* RC15: reference-style weight card, in the project's blue. */
+#jarvisDashboardV22 .j15-weight{padding:22px 18px 18px!important;border:1px solid #214e72!important;border-radius:22px!important;background:radial-gradient(ellipse at 95% -15%,#14558055,transparent 60%),linear-gradient(155deg,#0c2138,#070f20)!important;box-shadow:0 10px 24px #0005!important}
+#jarvisDashboardV22 .j15-weight .j22-card-head{align-items:center;margin-bottom:20px}
+#jarvisDashboardV22 .j15-weight h2{font-size:27px!important;line-height:1.2!important;letter-spacing:-.9px;color:#f5fbff!important;margin:0!important}
+#jarvisDashboardV22 .j15-weight .j22-eyebrow{font-size:8px;color:#7acfff;letter-spacing:1.6px;margin:0 0 6px}
+#jarvisDashboardV22 .j15-weight .j15-help{flex:0 0 36px;min-height:36px;width:36px;height:36px;display:grid;place-items:center;padding:0;border-radius:50%;border:1px solid #335776;background:#0c2035;color:#c7eaff;font-family:inherit;font-size:16px;cursor:pointer}
+.j15-summary{display:flex;flex-direction:column;gap:7px;margin:0 0 7px}
+.j15-summary-label{font-size:11px;line-height:1.5;color:#abc4da;margin:0}
+#jarvisDashboardV22 .j15-current{font-size:31px!important;line-height:1.2!important;letter-spacing:-1px;font-weight:600;color:#84e1ff}
+.j15-change{font-size:10px;line-height:1.6;color:#a2c8e3}
+#home .j15-weight .j15-chart{display:block;width:100%;height:auto;margin:6px 0 0;overflow:visible}
+.j15-chart .j15-grid{stroke:#6a93b5;stroke-opacity:.28;stroke-width:1;stroke-dasharray:7 9}
+.j15-chart .j15-area{stroke:none}
+.j15-chart .j22-weight-path,.j15-chart .j15-reference-path{fill:none;stroke:#8ce5ff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.j15-chart .j15-reference-path{stroke-dasharray:6 6;stroke-opacity:.85}
+.j15-chart .j22-weight-point{fill:#f5fcff;stroke:#0b1b2f;stroke-width:2}
+.j15-chart .j15-initial-reference{fill:#0d2943;stroke:#adeeff;stroke-width:2.5}
+.j15-chart .j22-weight-value{fill:#f4fbff;font:700 14px Arial,sans-serif}
+.j15-chart .j22-x-label{fill:#bbd3e5;font-size:9px}
+.j15-chart [role=button]:focus .j15-initial-reference{stroke:#fff;stroke-width:4}
+#jarvisDashboardV22 .j15-weight .j22-weight-detail{font-size:10px;line-height:1.6;color:#99b8d0;margin:0 0 12px}
+#jarvisDashboardV22 .j15-weight .j22-weight-journey{background:transparent;border:0;border-top:1px solid #214260;border-radius:0;padding:13px 0 0;margin:0}
+#jarvisDashboardV22 .j15-weight .j22-journey-labels{color:#accde5;font-size:10px}
+#jarvisDashboardV22 .j15-weight .j22-journey-caption{font-size:10px;color:#96b4cf}
+#jarvisDashboardV22 .j15-weight .j22-note{font-size:9px;line-height:1.6;color:#8eacc5;margin-top:12px}
+.j15-explanation{border:1px solid #2c526e;border-radius:12px;padding:11px;margin:12px 0 0;background:#102b43;color:#c5e1f6;font-size:11px;line-height:1.65}
+@media(max-width:340px){#jarvisDashboardV22 .j15-weight{padding:18px 14px!important}#jarvisDashboardV22 .j15-weight h2{font-size:25px!important}#jarvisDashboardV22 .j15-current{font-size:28px!important}}

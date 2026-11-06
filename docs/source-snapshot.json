@@ -1,0 +1,417 @@
+{
+  "application": "J.A.R.V.I.S",
+  "package": "br.com.caio.jarvis",
+  "versionName": "2.3-rc16",
+  "versionCode": 30,
+  "baseline_apk_sha256": "38e1e02b81725c60004f5f3be6ff3938cbb01c01ef55b1c2cfcb8d6c34466278",
+  "assets_compared_byte_for_byte": 23,
+  "assets": [
+    {
+      "path": "output/jarvis.html",
+      "size": 1028697,
+      "sha256": "257e793be58218492b419ea13848bfc9f4374a8a476e2b6a34f1903567373947"
+    },
+    {
+      "path": "output/demo-integrado/alimentos-taco.json",
+      "size": 99432,
+      "sha256": "7a7418a1be82083835b68961b9f6c2cf3e22e640a52e3c45aa3c5968efa0e296"
+    },
+    {
+      "path": "output/jarvis-assets/PDFJS-LICENSE.txt",
+      "size": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "output/jarvis-assets/health-rc8.css",
+      "size": 5321,
+      "sha256": "6260a716f43b704c1ae9e39adc7e8eae444b334efe460f1054371de9aaeab040"
+    },
+    {
+      "path": "output/jarvis-assets/gringotts.html",
+      "size": 1805386,
+      "sha256": "d890369517d6aa2108c96bc7be1e4e9ccb2d514213f31f42bd5d88ed75294a53"
+    },
+    {
+      "path": "output/jarvis-assets/assistant-v23.js",
+      "size": 21554,
+      "sha256": "e3482e6942a1d87a2f74bada7f9ebe64e9fd7b1079ff5c237d03d613fb35acbc"
+    },
+    {
+      "path": "output/jarvis-assets/pdf.worker.min.js",
+      "size": 1087212,
+      "sha256": "feabdf309770ed24bba31a5467836cdc8cf639c705af27d52b585b041bb8527b"
+    },
+    {
+      "path": "output/jarvis-assets/clean-rc4.js",
+      "size": 648,
+      "sha256": "df3bc9acfa03401f767c9ee11a20e9eadcca5a289fcadf6f8b8bafff182092be"
+    },
+    {
+      "path": "output/jarvis-assets/visual-rc16.js",
+      "size": 1489,
+      "sha256": "95663a912e003e2033d763f7b9e632e70de4655c425b27a267a8450aa01e2af6"
+    },
+    {
+      "path": "output/jarvis-assets/layout-rc9-extra.js",
+      "size": 3345,
+      "sha256": "d0a5d32aaef8ffaac7edc8aaeb461a53a07d546c1fbe674aeee11ea6082b93b0"
+    },
+    {
+      "path": "output/jarvis-assets/layout-rc9-extra.css",
+      "size": 18648,
+      "sha256": "3ad98cc2579a28ad0b2fe973203ec30d090360a44e2ca589d9c6af0b784d2714"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-SemiBold-600.ttf",
+      "size": 151516,
+      "sha256": "dae40ca7b35fe7501bda2e4140a6860b1db47330be5d3c8ab6971fd83a70e9a5"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-Bold-700.ttf",
+      "size": 150292,
+      "sha256": "1984efdda0fbe207d7ac20feac2ba7c2768c92a90094b02a206c9d58cc30ff2e"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-OFL.txt",
+      "size": 4385,
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-Regular-400.ttf",
+      "size": 154628,
+      "sha256": "cdedb1729acac414ed01744a11da7badb86adf13108e7bd3fa161b9323f7fe54"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-Medium-500.ttf",
+      "size": 152860,
+      "sha256": "fcff04f4bec2b3636f05ed894dc1f9a752c4cb587ee49857ec7a82abaf6ca016"
+    },
+    {
+      "path": "output/jarvis-assets/assistant-v23.css",
+      "size": 3225,
+      "sha256": "638b8d9a01c3e3f2d41effb82758f7551c2153792e628a55b2b5e94251dad719"
+    },
+    {
+      "path": "output/jarvis-assets/health-rc8.js",
+      "size": 16175,
+      "sha256": "7ac97d849a2afc1c78d0463eb5fdaf23497acbbc32fed8ce684840da5a4d5bd1"
+    },
+    {
+      "path": "output/jarvis-assets/study-reader.png",
+      "size": 287958,
+      "sha256": "208d494116cde4f77bf9cc7fed3510512a5dec49d64df133b5310ccc745a6f84"
+    },
+    {
+      "path": "output/jarvis-assets/jarvis-bot.svg",
+      "size": 2475,
+      "sha256": "a445930413ef4c8d74509b849cdd362ab08ca1e5217c69423f8ae9581ee72385"
+    },
+    {
+      "path": "output/jarvis-assets/clean-rc4.css",
+      "size": 10660,
+      "sha256": "407339ffb14e49851ac715fdae0d4265bee5c7e078db9914b7ff883dae32621f"
+    },
+    {
+      "path": "output/jarvis-assets/pdf.min.js",
+      "size": 320004,
+      "sha256": "5b5799e6f8c680663207ac5b42ee14eed2a406fa7af48f50c154f0c0b1566946"
+    },
+    {
+      "path": "output/jarvis-assets/visual-rc16.css",
+      "size": 3487,
+      "sha256": "72039803608c829fbd2ae740ed721fa5d48d593a517f1370a02c7d96be4ad287"
+    }
+  ],
+  "android_sources": [
+    {
+      "path": "output/jarvis-android/src/br/com/caio/jarvis/MainActivity.java",
+      "sha256": "550938c5c6b5d04e792ac49e317fa3873f9e0f2f2e86e39814622363ace94d9d"
+    },
+    {
+      "path": "output/jarvis-android/src/br/com/caio/jarvis/ActivationDiagnostics.java",
+      "sha256": "63c4e5d13537cd1b5b98d9eaea6b7038b5d28d44dde79c20759ab94ddcdc64cc"
+    }
+  ],
+  "no_application_source_modified": true,
+  "no_apk_rebuilt": true,
+  "build_validation": "Static completeness only; compilation intentionally not executed.",
+  "original_signing_material_included": false,
+  "device_data_included": false,
+  "preserved_files": [
+    {
+      "path": "output/demo-integrado/alimentos-taco.json",
+      "size": 99432,
+      "sha256": "7a7418a1be82083835b68961b9f6c2cf3e22e640a52e3c45aa3c5968efa0e296"
+    },
+    {
+      "path": "output/jarvis-android/AndroidManifest.xml",
+      "size": 1174,
+      "sha256": "f6acadc60bf8d9ea071d8fe17c7652d08c0c652c31acf6a22d74018a56d1e440"
+    },
+    {
+      "path": "output/jarvis-android/build-apk.sh",
+      "size": 2470,
+      "sha256": "f9cbfa25bccdd0c99a7d9e85373a37b1cf03582d2c5e7cf1ef26ece7b37c3eab"
+    },
+    {
+      "path": "output/jarvis-android/res/drawable-nodpi/ic_launcher_foreground.png",
+      "size": 134310,
+      "sha256": "9ff871ac452ed7552a1a5bcfd2c57bbac585ccc4d4feed0495aa105a5e459436"
+    },
+    {
+      "path": "output/jarvis-android/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "size": 217,
+      "sha256": "71440c9185ea1ba1eb1a3e78a6f5ea38278039f8feb2dff67bfdd621def7003c"
+    },
+    {
+      "path": "output/jarvis-android/res/mipmap-hdpi/ic_launcher.png",
+      "size": 12113,
+      "sha256": "f446d762b6c7a878e12546285d87911c2a009bc24cc73f99d94b3ed60298b86a"
+    },
+    {
+      "path": "output/jarvis-android/res/mipmap-mdpi/ic_launcher.png",
+      "size": 5684,
+      "sha256": "833b933476d66648f6ba2f3b09874049e1febf9ddbe565cdcdd0238aaa5aea74"
+    },
+    {
+      "path": "output/jarvis-android/res/mipmap-xhdpi/ic_launcher.png",
+      "size": 20672,
+      "sha256": "18290ad3218372bf1585a32fc6fd3c9bf2515ae885aca84c32b655c1df7c7d3a"
+    },
+    {
+      "path": "output/jarvis-android/res/mipmap-xxhdpi/ic_launcher.png",
+      "size": 43606,
+      "sha256": "5fd61ff3bd84e6b2aca14f337684716ee78671098f3f9d6d8752a8318b5e678d"
+    },
+    {
+      "path": "output/jarvis-android/res/mipmap-xxxhdpi/ic_launcher.png",
+      "size": 73384,
+      "sha256": "7903ddc53b25ae81ecfc03186086e5e94531bedcacb2472c656c4d5f4c979663"
+    },
+    {
+      "path": "output/jarvis-android/res/values/colors.xml",
+      "size": 75,
+      "sha256": "572bb1c673299c9b325cfd8a4cc78b575bcb0e3e7c0fea9ad54891766f93c29a"
+    },
+    {
+      "path": "output/jarvis-android/res/values/styles.xml",
+      "size": 474,
+      "sha256": "8d4bfc9160a842b3fb5cb843ec37e37d176e6bd093e490d785fb55a8c3bd0adf"
+    },
+    {
+      "path": "output/jarvis-android/src/br/com/caio/jarvis/ActivationDiagnostics.java",
+      "size": 2570,
+      "sha256": "63c4e5d13537cd1b5b98d9eaea6b7038b5d28d44dde79c20759ab94ddcdc64cc"
+    },
+    {
+      "path": "output/jarvis-android/src/br/com/caio/jarvis/MainActivity.java",
+      "size": 68117,
+      "sha256": "550938c5c6b5d04e792ac49e317fa3873f9e0f2f2e86e39814622363ace94d9d"
+    },
+    {
+      "path": "output/jarvis-android/tests/br/com/caio/jarvis/ActivationDiagnosticsTest.java",
+      "size": 1984,
+      "sha256": "04b52eaf7f8d6e4a3da1ed2bfbc9969bd1872902670e7bc53392c5303eec5955"
+    },
+    {
+      "path": "output/jarvis-assets/PDFJS-LICENSE.txt",
+      "size": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "output/jarvis-assets/assistant-v23.css",
+      "size": 3225,
+      "sha256": "638b8d9a01c3e3f2d41effb82758f7551c2153792e628a55b2b5e94251dad719"
+    },
+    {
+      "path": "output/jarvis-assets/assistant-v23.js",
+      "size": 21554,
+      "sha256": "e3482e6942a1d87a2f74bada7f9ebe64e9fd7b1079ff5c237d03d613fb35acbc"
+    },
+    {
+      "path": "output/jarvis-assets/clean-rc4.css",
+      "size": 10660,
+      "sha256": "407339ffb14e49851ac715fdae0d4265bee5c7e078db9914b7ff883dae32621f"
+    },
+    {
+      "path": "output/jarvis-assets/clean-rc4.js",
+      "size": 648,
+      "sha256": "df3bc9acfa03401f767c9ee11a20e9eadcca5a289fcadf6f8b8bafff182092be"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-Bold-700.ttf",
+      "size": 150292,
+      "sha256": "1984efdda0fbe207d7ac20feac2ba7c2768c92a90094b02a206c9d58cc30ff2e"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-Medium-500.ttf",
+      "size": 152860,
+      "sha256": "fcff04f4bec2b3636f05ed894dc1f9a752c4cb587ee49857ec7a82abaf6ca016"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-OFL.txt",
+      "size": 4385,
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-Regular-400.ttf",
+      "size": 154628,
+      "sha256": "cdedb1729acac414ed01744a11da7badb86adf13108e7bd3fa161b9323f7fe54"
+    },
+    {
+      "path": "output/jarvis-assets/fonts/Poppins-SemiBold-600.ttf",
+      "size": 151516,
+      "sha256": "dae40ca7b35fe7501bda2e4140a6860b1db47330be5d3c8ab6971fd83a70e9a5"
+    },
+    {
+      "path": "output/jarvis-assets/gringotts.html",
+      "size": 1805386,
+      "sha256": "d890369517d6aa2108c96bc7be1e4e9ccb2d514213f31f42bd5d88ed75294a53"
+    },
+    {
+      "path": "output/jarvis-assets/health-rc8.css",
+      "size": 5321,
+      "sha256": "6260a716f43b704c1ae9e39adc7e8eae444b334efe460f1054371de9aaeab040"
+    },
+    {
+      "path": "output/jarvis-assets/health-rc8.js",
+      "size": 16175,
+      "sha256": "7ac97d849a2afc1c78d0463eb5fdaf23497acbbc32fed8ce684840da5a4d5bd1"
+    },
+    {
+      "path": "output/jarvis-assets/jarvis-bot.svg",
+      "size": 2475,
+      "sha256": "a445930413ef4c8d74509b849cdd362ab08ca1e5217c69423f8ae9581ee72385"
+    },
+    {
+      "path": "output/jarvis-assets/layout-rc9-extra.css",
+      "size": 18648,
+      "sha256": "3ad98cc2579a28ad0b2fe973203ec30d090360a44e2ca589d9c6af0b784d2714"
+    },
+    {
+      "path": "output/jarvis-assets/layout-rc9-extra.js",
+      "size": 3345,
+      "sha256": "d0a5d32aaef8ffaac7edc8aaeb461a53a07d546c1fbe674aeee11ea6082b93b0"
+    },
+    {
+      "path": "output/jarvis-assets/pdf.min.js",
+      "size": 320004,
+      "sha256": "5b5799e6f8c680663207ac5b42ee14eed2a406fa7af48f50c154f0c0b1566946"
+    },
+    {
+      "path": "output/jarvis-assets/pdf.worker.min.js",
+      "size": 1087212,
+      "sha256": "feabdf309770ed24bba31a5467836cdc8cf639c705af27d52b585b041bb8527b"
+    },
+    {
+      "path": "output/jarvis-assets/study-reader.png",
+      "size": 287958,
+      "sha256": "208d494116cde4f77bf9cc7fed3510512a5dec49d64df133b5310ccc745a6f84"
+    },
+    {
+      "path": "output/jarvis-assets/visual-rc16.css",
+      "size": 3487,
+      "sha256": "72039803608c829fbd2ae740ed721fa5d48d593a517f1370a02c7d96be4ad287"
+    },
+    {
+      "path": "output/jarvis-assets/visual-rc16.js",
+      "size": 1489,
+      "sha256": "95663a912e003e2033d763f7b9e632e70de4655c425b27a267a8450aa01e2af6"
+    },
+    {
+      "path": "output/jarvis.html",
+      "size": 1028697,
+      "sha256": "257e793be58218492b419ea13848bfc9f4374a8a476e2b6a34f1903567373947"
+    },
+    {
+      "path": "scripts/test-jarvis-rc15.py",
+      "size": 7914,
+      "sha256": "c32fec664affa2d458e48eb40c7d8974af14a54e60d70f90f64956c67fde614f"
+    },
+    {
+      "path": "scripts/test-jarvis-rc16-visual.py",
+      "size": 7111,
+      "sha256": "7eb6ea2107c67f12ea9f2821b8f8d95225f2210d6a166b9d0019453aaa7eb377"
+    },
+    {
+      "path": "server/package.json",
+      "size": 184,
+      "sha256": "6ae4d139283321cd31baa12ce9bf7ed903fcf321a3c4aba68df612429dbb1f1f"
+    },
+    {
+      "path": "server/src/taco-data.js",
+      "size": 185236,
+      "sha256": "1f3f3bc755c460312fe9dbe760eba7d0f8dbb2f00c3d539bcb2ffc21468c8849"
+    },
+    {
+      "path": "server/src/taco-data.json",
+      "size": 185122,
+      "sha256": "185e6cb8aa96f688be37e16275c7631757136f750099837e1d48fa82ce407a85"
+    },
+    {
+      "path": "server/src/taco.js",
+      "size": 13376,
+      "sha256": "ee6b8d4e63f2e602c438855a8d3e99206dbe908862963e3929932ac63674c644"
+    },
+    {
+      "path": "server/src/worker.js",
+      "size": 41610,
+      "sha256": "8ac72da7d731cbb6d10fd0e40b2733cec5a6b6bd4e96b030387981e9057fd9fd"
+    },
+    {
+      "path": "server/test/enrollment.test.mjs",
+      "size": 6662,
+      "sha256": "567fb31e91f4a0777b7c949b3a2cd5a5f5e762a96a282af23604f94501583277"
+    },
+    {
+      "path": "server/test/gemini-parser.test.mjs",
+      "size": 2196,
+      "sha256": "5d339968166a120e6112a9c5c7495f132de4ae82048cef0b8163006e1210cd45"
+    },
+    {
+      "path": "server/test/general-chat-taco.test.mjs",
+      "size": 7086,
+      "sha256": "e013f1bb09b436a01312117451f19b625a7cdc43857a0d7c480de37ff963c928"
+    },
+    {
+      "path": "server/test/nutrition-grounding.test.mjs",
+      "size": 6527,
+      "sha256": "e17ffe1027be2509134ef98ba34a31d2165fd3295161dc1456e87fb54c5dc0c5"
+    },
+    {
+      "path": "server/test/real-gemini.mjs",
+      "size": 1783,
+      "sha256": "3311247216a4f13f3f5eeea244d4d913f93333b7c6100b2467d9f95f6f1d8b44"
+    },
+    {
+      "path": "server/test/taco-coverage.test.mjs",
+      "size": 5747,
+      "sha256": "1c2caa4adffb43c23a85ccc6976d96c7286191edfc1b32f1dd94d62b17020f14"
+    },
+    {
+      "path": "server/test/worker.test.mjs",
+      "size": 8105,
+      "sha256": "46bfdf3bea1b6d6963f0d5e1e3287a4f1698bbc5474ba565c24b9461c19c4712"
+    },
+    {
+      "path": "server/tools/audit_taco_dataset.py",
+      "size": 6476,
+      "sha256": "9eeb3ab4a5c8e07c2f3409c7d416159b838fcaf04c32bc516efc62e053b0b778"
+    },
+    {
+      "path": "server/tools/build_taco_dataset.py",
+      "size": 4228,
+      "sha256": "2e57ee3e791f26f37b6187cdf1792e7d2c12be3708981ca3223e5a3f667d7d94"
+    },
+    {
+      "path": "server/tools/issue-token.mjs",
+      "size": 940,
+      "sha256": "24b499df5f5ca7ebf958ca519cb30987976d3e6ca559ed7ede43161816a0fe1f"
+    },
+    {
+      "path": "server/wrangler.jsonc",
+      "size": 510,
+      "sha256": "f6758b5aca95f63dc4f53ccc0a893518ff449961f6af6d9332c4146de7d5cd74"
+    }
+  ]
+}

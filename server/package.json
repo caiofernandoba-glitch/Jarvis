@@ -1,0 +1,9 @@
+{
+  "name": "jarvis-gemini-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:real": "node test/real-gemini.mjs"
+  }
+}

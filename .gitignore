@@ -1,0 +1,32 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+config/*.local.env
+*.local.env
+**/keystore/
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+.signing-password
+**/.signing-password
+# Local tools, build outputs and reports
+/tools/
+**/build/
+*.apk
+*.idsig
+*.aab
+*.class
+*.dex
+node_modules/
+.wrangler/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
