@@ -1,0 +1,45 @@
+name: Materialize preserved source (no APK build)
+on:
+  push:
+    paths:
+      - '.source-transfer/READY'
+permissions:
+  contents: write
+jobs:
+  materialize:
+    if: github.event.deleted == false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore exact source files only
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, io, json, tarfile
+          root = Path.cwd().resolve()
+          transfer = root / '.source-transfer'
+          meta = json.loads((transfer / 'READY').read_text())
+          parts = sorted(transfer.glob('part-*.txt'))
+          assert len(parts) == meta['parts'], 'Missing transfer parts'
+          data = base64.b64decode(''.join(p.read_text() for p in parts), validate=True)
+          assert hashlib.sha256(data).hexdigest() == meta['sha256'], 'Archive checksum differs'
+          with tarfile.open(fileobj=io.BytesIO(data), mode='r:xz') as archive:
+              for entry in archive.getmembers():
+                  target = (root / entry.name).resolve()
+                  assert target.is_relative_to(root), 'Unsafe archive path'
+                  assert not entry.issym() and not entry.islnk(), 'No archive links allowed'
+                  assert entry.isfile() or entry.isdir(), 'Unsupported archive entry'
+              archive.extractall(root, filter='data')
+          PY
+          python3 scripts/verify-source.py
+          bash -n scripts/build-local.sh output/jarvis-android/build-apk.sh
+      - name: Commit the complete original source (no compilation)
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -r .source-transfer
+          git add README.md .gitignore config docs output scripts server
+          git commit -m '[skip ci] source: materialize preserved Jarvis RC16 snapshot'
+          git push origin HEAD:main
